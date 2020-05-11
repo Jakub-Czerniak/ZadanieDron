@@ -43,7 +43,7 @@ case 'y':
     break;
 
 default:
-    std::cerr<<"Brak osi" << Os << "w ukladzie. " << std::endl;
+    std::cerr<<"Brak takiej osi w ukladzie. " << std::endl;
     exit(1);
     break;
 }

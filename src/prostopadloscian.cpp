@@ -44,7 +44,7 @@ Wektor3D & prostopadloscian::operator[] (int index)
   return wierzcholki[index];
 }
 
-void prostopadloscian::rotacjaZ(const double kat)
+void prostopadloscian::rotacjaZ(const double kat) //w dronie dodać zmiane orientacji
 { 
     MacierzOb MacO(kat,'z');
 

@@ -1,13 +1,13 @@
 #include <iostream>
-#include "Dr3D_gnuplot_api.hh"
+
 #include "Draw3D_api_interface.hh"
+#include "Dr3D_gnuplot_api.hh"
 #include "MacierzOb.hh"
 #include "Macierz.hh"
 #include "Wektor.hh"
 #include "prostopadloscian.hh"
 #include "dron.hh"
 
-using std::vector;
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
 using std::cout;
@@ -19,6 +19,7 @@ using Wektor3D=Wektor<double,3>;
 
 void menu()
 {
+cout << endl;
 cout << "r - zadaj ruch na wprost" << endl;
 cout << "o - zadaj zmiane orientacji" << endl;
 cout << "m - wyswietl menu" << endl << endl;

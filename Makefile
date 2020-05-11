@@ -1,33 +1,34 @@
-CPPFLAGS= -c -g -Wall -pedantic -std=c++17 
+CPPFLAGS= -c -g -Wall -pedantic -std=c++17
 
 __start__: main.out
 	./main.out
 
-main.out: Dr3D_gnuplot_api.o main.o
-	g++ -o main.out main.o MacierzOb.o Macierz.o Wektor.o Dr3D_gnuplot_api.o prostopadloscian.o dron.o -lpthread
+main.out:  obj/main.o obj/MacierzOb.o obj/Macierz.o obj/Wektor.o obj/Dr3D_gnuplot_api.o obj/prostopadloscian.o obj/dron.o
+	g++ -o main.out obj/main.o obj/MacierzOb.o obj/Macierz.o obj/Wektor.o obj/Dr3D_gnuplot_api.o obj/prostopadloscian.o obj/dron.o -lpthread
 
-main.o: main.cpp Dr3D_gnuplot_api.hh MacierzOb.hh Macierz.hh Wektor.hh prostopadloscian.hh
-	g++ ${CPPFLAGS} -o main.o main.cpp
+obj/main.o: src/main.cpp inc/Draw3D_api_interface.hh inc/Dr3D_gnuplot_api.hh inc/Wektor.hh inc/Macierz.hh inc/MacierzOb.hh inc/prostopadloscian.hh inc/dron.hh
+	g++ ${CPPFLAGS} -o obj/main.o src/main.cpp
 
-Dr3D_gnuplot_api.o: Dr3D_gnuplot_api.cpp Dr3D_gnuplot_api.hh
-	g++ ${CPPFLAGS} -o Dr3D_gnuplot_api.o Dr3D_gnuplot_api.cpp
+obj/Dr3D_gnuplot_api.o: src/Dr3D_gnuplot_api.cpp inc/Dr3D_gnuplot_api.hh inc/Draw3D_api_interface.hh
+	g++ ${CPPFLAGS} -o obj/Dr3D_gnuplot_api.o src/Dr3D_gnuplot_api.cpp
 
-Dr3D_gnuplot_api.hh: Draw3D_api_interface.hh
-	touch Dr3D_gnuplot_api.hh
+inc/Dr3D_gnuplot_api.hh: inc/Draw3D_api_interface.hh
+	touch inc/Dr3D_gnuplot_api.hh
 
-MacierzOb.o: MacierzOb.cpp MacierzOb.hh Macierz.hh Wektor.hh
-	g++ ${CPPFLAGS} -o MacierzOb.o Macierz.cpp
+obj/Wektor.o: src/Wektor.cpp inc/Wektor.hh
+	g++ ${CPPFLAGS} -o obj/Wektor.o src/Wektor.cpp
 
-Macierz.o: Macierz.cpp Macierz.hh Wektor.hh
-	g++ ${CPPFLAGS} -o Macierz.o Macierz.cpp
+obj/Macierz.o: src/Macierz.cpp inc/Macierz.hh inc/Wektor.hh
+	g++ ${CPPFLAGS} -o obj/Macierz.o src/Macierz.cpp
 
-Wektor.o: Wektor.cpp Wektor.hh
-	g++ ${CPPFLAGS} -o Wektor.o Wektor.cpp
+obj/MacierzOb.o: src/MacierzOb.cpp inc/MacierzOb.hh inc/Macierz.hh inc/Wektor.hh
+	g++ ${CPPFLAGS} -o obj/MacierzOb.o src/Macierz.cpp
 
-prostopadloscian.o: prostopadloscian.cpp Macierz.hh MacierzOb.hh Wektor.hh Dr3D_gnuplot_api.hh Draw3D_api_interface.hh
-	g++ ${CPPFLAGS} -o prostopadloscian.o prostopadloscian.cpp
+obj/prostopadloscian.o: src/prostopadloscian.cpp inc/Macierz.hh inc/MacierzOb.hh inc/Wektor.hh inc/Dr3D_gnuplot_api.hh inc/Draw3D_api_interface.hh inc/prostopadloscian.hh
+	g++ ${CPPFLAGS} -o obj/prostopadloscian.o src/prostopadloscian.cpp
 
-dron.o: dron.cpp Macierz.hh MacierzOb.hh Wektor.hh Dr3D_gnuplot_api.hh Draw3D_api_interface.hh prostopadloscian.hh
-	g++ ${CPPFLAGS} -o dron.o dron.cpp
+obj/dron.o: src/dron.cpp inc/Macierz.hh inc/MacierzOb.hh inc/Wektor.hh inc/Dr3D_gnuplot_api.hh inc/Draw3D_api_interface.hh inc/prostopadloscian.hh inc/dron.hh
+	g++ ${CPPFLAGS} -o obj/dron.o src/dron.cpp
+
 clear:
 	rm main.out main.o Dr3D_gnuplot_api.o

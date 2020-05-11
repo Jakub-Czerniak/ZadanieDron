@@ -19,6 +19,9 @@ dron(prostopadloscian prst, Wektor3D orient);
 Wektor3D znajdzOrientacje();
 void zmienOrientacje(Wektor3D Wek);
 dron plyn(double odl, double kat);
+void rotacjaZ(const double kat);
+void rotacjaY(const double kat);
+void rotacjaX(const double kat);
 };
 
 

@@ -1,66 +1,25 @@
 #include "dron.hh"
 
-dron::dron(prostopadloscian prst, Wektor3D orient)
+dron::dron(prostopadloscian prst)
 {
+    Macierz<double,3> Mac(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));
+    MacierzOb MacJedn(Mac);
+    Orientacja=Mac;
+    Wektor3D Wek(0,0,0);
+    Srodek=Wek;
     for (int i=0;i<8;i++)
     {
         wierzcholki[i]=prst[i];
     }
-    orientacja=orient;
 }
 
-Wektor3D dron::znajdzOrientacje()
-{
-    return orientacja;
-}
-void dron::zmienOrientacje(Wektor3D Wek)
-{
-    orientacja = Wek;
-}
 
 dron dron::plyn(double odl,double kat) 
 {
-MacierzOb MacO(kat,'y');
-Wektor3D ruch;
-orientacja=MacO*orientacja;
-ruch=orientacja*odl;
-for (int i=0;i<8;i++)
-{
-    wierzcholki[i]=wierzcholki[i]+ruch;
-}
+double pi=3.14159265358979323846264338327;
+Wektor3D ruch(cos(kat*pi/180)*odl,0,sin(kat*pi/180)*odl);
+ruch=Orientacja*ruch;
+przesun(ruch);
+
 return *this;
-}
-
-void dron::rotacjaZ(const double kat)
-{
-MacierzOb MacO(kat,'z');
-
-orientacja=MacO*orientacja;
-
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
-}
-void dron::rotacjaY(const double kat)
-{
-MacierzOb MacO(kat,'x');
-
-orientacja=MacO*orientacja;
-
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
-}
-void dron::rotacjaX(const double kat)
-{
-MacierzOb MacO(kat,'y');
-
-orientacja=MacO*orientacja;
-
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
 }

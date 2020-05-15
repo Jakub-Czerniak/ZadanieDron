@@ -23,7 +23,7 @@ cout << endl;
 cout << "r - zadaj ruch na wprost" << endl;
 cout << "o - zadaj zmiane orientacji" << endl;
 cout << "m - wyswietl menu" << endl << endl;
-cout << "k - koniec dzialania programu" << endl;
+cout << "k - koniec dzialania programu" << endl << endl;
 }
 
 
@@ -31,9 +31,9 @@ int main() {
 
 int kat, odleglosc;
 char wybor;
-prostopadloscian prst(Wektor3D(0,0,0),Wektor3D(0,3,0),Wektor3D(4,3,0),Wektor3D(4,0,0),Wektor3D(0,0,2),Wektor3D(0,3,2),Wektor3D(4,3,2),Wektor3D(4,0,2));
-Wektor3D orient(1,0,0);
-dron plywak(prst, orient);
+prostopadloscian prst(Wektor3D(-2,-1.5,-1),Wektor3D(-2,1.5,-1),Wektor3D(2,1.5,-1),Wektor3D(2,-1.5,-1),Wektor3D(-2,-1.5,1),Wektor3D(-2,1.5,1),Wektor3D(2,1.5,1),Wektor3D(2,-1.5,1));
+dron plywak(prst); 
+
 
 drawNS::Draw3DAPI * api = new APIGnuPlot3D(-10,10,-10,10,-10,10,0); 
 
@@ -57,9 +57,12 @@ while(wybor!='k')
   cout << "Wartosc odleglosci> ";
   cin >> odleglosc;
   cout << endl << endl;
+  for(int i=0;i<odleglosc*10;i++)
+{
   api->erase_shape(a);
-  plywak.plyn(odleglosc, kat); //nie dziala jeszcze
+  plywak.plyn(0.1,kat);
   a=plywak.rysuj(*api); 
+}
    break;
 
   case 'o':
@@ -67,9 +70,14 @@ while(wybor!='k')
     cout << "Wartosc kata> ";
     cin >> kat;
     cout << endl << endl;
-    api->erase_shape(a);
-    plywak.rotacjaZ(kat); 
-    a=plywak.rysuj(*api);
+    for (int j=0;j<kat*10;j++)
+    {
+      api->erase_shape(a);
+      plywak.rotacjaZ(0.1); 
+      a=plywak.rysuj(*api);
+    }
+    
+
     break;
 
   case 'm':

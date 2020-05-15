@@ -1,6 +1,8 @@
 #ifndef DRON_HH
 #define DRON_HH
 
+#include <math.h>
+#include "Obiekt3D.hh"
 #include "Wektor.hh"
 #include "Macierz.hh"
 #include "MacierzOb.hh"
@@ -11,19 +13,11 @@ using Wektor3D=Wektor<double,3>;
 
 class dron: public prostopadloscian
 {
-protected:
-Wektor3D orientacja;
-
 public:
-dron(prostopadloscian prst, Wektor3D orient);
-Wektor3D znajdzOrientacje();
-void zmienOrientacje(Wektor3D Wek);
-dron plyn(double odl, double kat);
-void rotacjaZ(const double kat);
-void rotacjaY(const double kat);
-void rotacjaX(const double kat);
-};
+dron(prostopadloscian prst);
 
+dron plyn(double odl, double kat);
+};
 
 
 

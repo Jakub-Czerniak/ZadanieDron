@@ -2,18 +2,20 @@
 #define PROSTOPALOSCIAN_HH
 
 
+#include "Obiekt3D.hh"
 #include "Wektor.hh"
 #include "Macierz.hh"
 #include "MacierzOb.hh"
 #include "Dr3D_gnuplot_api.hh"
 #include "Draw3D_api_interface.hh"
 
+using std::vector;
+using std::cout;
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
-using std::vector;
 using Wektor3D=Wektor<double,3>;
 
-class prostopadloscian
+class prostopadloscian : public Obiekt3D
 {
 protected:
     Wektor3D wierzcholki[8];
@@ -22,6 +24,7 @@ public:
     prostopadloscian(Wektor3D A, Wektor3D B, Wektor3D C, Wektor3D D, Wektor3D E, Wektor3D F, Wektor3D G, Wektor3D H);
     const Wektor3D  & operator[] (int index) const;
     Wektor3D & operator[] (int index);
+    void przesun(Wektor3D &Wek);
     void rotacjaZ(const double kat);
     void rotacjaY(const double kat);
     void rotacjaX(const double kat);

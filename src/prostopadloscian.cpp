@@ -44,42 +44,31 @@ Wektor3D & prostopadloscian::operator[] (int index)
   return wierzcholki[index];
 }
 
-void prostopadloscian::rotacjaZ(const double kat) //w dronie dodać zmiane orientacji
+void prostopadloscian::rotacjaZ(const double kat)
 { 
     MacierzOb MacO(kat,'z');
-
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
+Macierz3D Pom;
+Pom=Orientacja*MacO;
+Orientacja=MacierzOb(Pom);
 }
 
-void prostopadloscian::rotacjaX(const double kat)
-{ 
-    MacierzOb MacO(kat,'x');
 
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
-}
-
-void prostopadloscian::rotacjaY(const double kat)
-{ 
-    MacierzOb MacO(kat,'y');
-
-     for(int ind=0;ind<8;ind++)
-    {
-    wierzcholki[ind]=MacO*wierzcholki[ind];
-    }
+void prostopadloscian::przesun(Wektor3D &Wek)
+{
+ Srodek= Srodek + Wek;
 }
 
 int prostopadloscian::rysuj(drawNS::Draw3DAPI & api)
 {
+ Wektor3D wierzcholki_Glb[8];
+  for(int ind=0;ind<8;ind++)
+{
+wierzcholki_Glb[ind]=Srodek+Orientacja*wierzcholki[ind];
+}
 int pom= api.draw_polyhedron(vector<vector<Point3D> > {{
-	Point3D(wierzcholki[0][0],wierzcholki[0][1],wierzcholki[0][2]), Point3D(wierzcholki[1][0],wierzcholki[1][1],wierzcholki[1][2]), Point3D(wierzcholki[2][0],wierzcholki[2][1],wierzcholki[2][2]),Point3D(wierzcholki[3][0],wierzcholki[3][1],wierzcholki[3][2])
+	Point3D(wierzcholki_Glb[0][0],wierzcholki_Glb[0][1],wierzcholki_Glb[0][2]), Point3D(wierzcholki_Glb[1][0],wierzcholki_Glb[1][1],wierzcholki_Glb[1][2]), Point3D(wierzcholki_Glb[2][0],wierzcholki_Glb[2][1],wierzcholki_Glb[2][2]),Point3D(wierzcholki_Glb[3][0],wierzcholki_Glb[3][1],wierzcholki_Glb[3][2])
       },{
-	Point3D(wierzcholki[4][0],wierzcholki[4][1],wierzcholki[4][2]), Point3D(wierzcholki[5][0],wierzcholki[5][1],wierzcholki[5][2]), Point3D(wierzcholki[6][0],wierzcholki[6][1],wierzcholki[6][2]), Point3D(wierzcholki[7][0],wierzcholki[7][1],wierzcholki[7][2])      
+	Point3D(wierzcholki_Glb[4][0],wierzcholki_Glb[4][1],wierzcholki_Glb[4][2]), Point3D(wierzcholki_Glb[5][0],wierzcholki_Glb[5][1],wierzcholki_Glb[5][2]), Point3D(wierzcholki_Glb[6][0],wierzcholki_Glb[6][1],wierzcholki_Glb[6][2]), Point3D(wierzcholki_Glb[7][0],wierzcholki_Glb[7][1],wierzcholki_Glb[7][2])      
 	  }},"blue");
 return pom;
 }

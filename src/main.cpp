@@ -35,7 +35,7 @@ prostopadloscian prst(Wektor3D(-2,-1.5,-1),Wektor3D(-2,1.5,-1),Wektor3D(2,1.5,-1
 dron plywak(prst); 
 
 
-drawNS::Draw3DAPI * api = new APIGnuPlot3D(-10,10,-10,10,-10,10,0); 
+drawNS::Draw3DAPI * api = new APIGnuPlot3D(-20,20,-20,20,-20,20,0); 
 
 int a=plywak.rysuj(*api);
 menu();
@@ -70,13 +70,13 @@ while(wybor!='k')
     cout << "Wartosc kata> ";
     cin >> kat;
     cout << endl << endl;
+
     for (int j=0;j<kat*10;j++)
     {
       api->erase_shape(a);
       plywak.rotacjaZ(0.1); 
       a=plywak.rysuj(*api);
     }
-    
 
     break;
 

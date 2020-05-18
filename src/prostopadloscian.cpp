@@ -46,10 +46,10 @@ Wektor3D & prostopadloscian::operator[] (int index)
 
 void prostopadloscian::rotacjaZ(const double kat)
 { 
-    MacierzOb MacO(kat,'z');
-Macierz3D Pom;
-Pom=Orientacja*MacO;
-Orientacja=MacierzOb(Pom);
+  MacierzOb MacO(kat,'z');
+  Macierz3D Pom;
+  Pom=Orientacja*MacO;
+  Orientacja=MacierzOb(Pom);
 }
 
 

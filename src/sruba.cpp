@@ -59,7 +59,7 @@ sruba::sruba(Wektor3D Zaczepienie, double R, double H)
     Macierz<double,3> Mac(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));
     Orientacja=Mac;
     Wektor3D Wek(0,0,0);
-    Srodek=Wek+Zaczepienie;
+    Srodek=Wek;
 }
 
 

@@ -9,6 +9,8 @@
 #include "graniastoslup.hh"
 #include "dron.hh"
 #include "sruba.hh"
+#include "powierzchnia.hh"
+#include "dno.hh"
 
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
@@ -44,50 +46,10 @@ drawNS::Draw3DAPI * api = new APIGnuPlot3D(-20,20,-20,20,-20,20,0);
 
 
 
-      api->draw_surface(vector<vector<Point3D> > {{
-	drawNS::Point3D(-20,-20,-19), drawNS::Point3D(-20,-10,-19), drawNS::Point3D(-20,0,-19), drawNS::Point3D(-20,10,-19), drawNS::Point3D(-20,20,-19)
-	  },{
-  drawNS::Point3D(-15,-20,-19), drawNS::Point3D(-15,-10,-19), drawNS::Point3D(-15,0,-19), drawNS::Point3D(-15,10,-19), drawNS::Point3D(-15,20,-19)
-	  },{
-	drawNS::Point3D(-10,-20,-19), drawNS::Point3D(-10,-10,-19), drawNS::Point3D(-10,0,-19), drawNS::Point3D(-10,10,-19), drawNS::Point3D(-10,20,-19)       
-	  },{
-  drawNS::Point3D(-5,-20,-19), drawNS::Point3D(-5,-10,-19), drawNS::Point3D(-5,0,-19), drawNS::Point3D(-5,10,-19), drawNS::Point3D(-5,20,-19)       
-	  },{
-	drawNS::Point3D(-0,-20,-19), drawNS::Point3D(-0,-10,-19), drawNS::Point3D(-0,0,-19), drawNS::Point3D(-0,10,-19), drawNS::Point3D(-0,20,-19)       
-	  },{
-  drawNS::Point3D(5,-20,-19), drawNS::Point3D(5,-10,-19), drawNS::Point3D(5,0,-19), drawNS::Point3D(5,10,-19), drawNS::Point3D(5,20,-19)       
-	  },{
-	drawNS::Point3D(10,-20,-19), drawNS::Point3D(10,-10,-19), drawNS::Point3D(10,0,-19), drawNS::Point3D(10,10,-19), drawNS::Point3D(10,20,-19)       
-	  },{
-  drawNS::Point3D(15,-20,-19), drawNS::Point3D(15,-10,-19), drawNS::Point3D(15,0,-19), drawNS::Point3D(15,10,-19), drawNS::Point3D(15,20,-19)       
-	  },{    
-	drawNS::Point3D(20,-20,-19), drawNS::Point3D(20,-10,-19), drawNS::Point3D(20,0,-19), drawNS::Point3D(20,10,-19), drawNS::Point3D(20,20,-19)       
-	  }},"grey");
-
-    api->redraw();
-
-      api->draw_surface(vector<vector<Point3D> > {{
-	drawNS::Point3D(-20,-20,15), drawNS::Point3D(-20,-10,15), drawNS::Point3D(-20,0,15), drawNS::Point3D(-20,10,15), drawNS::Point3D(-20,20,15)
-	  },{
-  drawNS::Point3D(-15,-20,17), drawNS::Point3D(-15,-10,17), drawNS::Point3D(-15,0,17), drawNS::Point3D(-15,10,17), drawNS::Point3D(-15,20,17)
-	  },{
-	drawNS::Point3D(-10,-20,15), drawNS::Point3D(-10,-10,15), drawNS::Point3D(-10,0,15), drawNS::Point3D(-10,10,15), drawNS::Point3D(-10,20,15)       
-	  },{
-  drawNS::Point3D(-5,-20,17), drawNS::Point3D(-5,-10,17), drawNS::Point3D(-5,0,17), drawNS::Point3D(-5,10,17), drawNS::Point3D(-5,20,17)       
-	  },{
-	drawNS::Point3D(-0,-20,15), drawNS::Point3D(-0,-10,15), drawNS::Point3D(-0,0,15), drawNS::Point3D(-0,10,15), drawNS::Point3D(-0,20,15)       
-	  },{
-  drawNS::Point3D(5,-20,17), drawNS::Point3D(5,-10,17), drawNS::Point3D(5,0,17), drawNS::Point3D(5,10,17), drawNS::Point3D(5,20,17)       
-	  },{
-	drawNS::Point3D(10,-20,15), drawNS::Point3D(10,-10,15), drawNS::Point3D(10,0,15), drawNS::Point3D(10,10,15), drawNS::Point3D(10,20,15)       
-	  },{
-  drawNS::Point3D(15,-20,17), drawNS::Point3D(15,-10,17), drawNS::Point3D(15,0,17), drawNS::Point3D(15,10,17), drawNS::Point3D(15,20,17)       
-	  },{    
-	drawNS::Point3D(20,-20,15), drawNS::Point3D(20,-10,15), drawNS::Point3D(20,0,15), drawNS::Point3D(20,10,15), drawNS::Point3D(20,20,15)       
-	  }},"light-blue");
-
-api->redraw();
-
+dno Dno(Wektor3D(0,0,0),20,-20);
+powierzchnia Pow(Wektor3D(0,0,0),20,18);
+Dno.rysuj(*api);
+Pow.rysuj(*api);
 plywak.rysujD(*api);
 
 api->redraw();
@@ -106,12 +68,19 @@ while(wybor!='k')
   cout << "Wartosc kata> ";
   cin >> kat;
   cout << endl << endl;
-
+  if(kat>90 || kat<-90)
+  cout<<"Podaj kat miedzy 90, a -90."<< endl <<endl;
+  else
+  {
   cout << "Podaj wartosc odleglosci, na ktora ma sie przemiescic dron." << endl;
   cout << "Wartosc odleglosci> ";
   cin >> odleglosc;
   cout << endl << endl;
+  if(odleglosc<0)
+  cout<<"Podaj dodatnią odleglosc."<<endl<<endl;
+  else
   plywak.plyn_anim(odleglosc, kat, *api);
+  }
 
   break;
 

@@ -36,8 +36,6 @@ dron dron::plyn_anim(double odl,double kat, drawNS::Draw3DAPI &api)
       for(int i=0;i<odl*10;i++)
 {
   plyn(0.1,kat);
-  lewa.rotacjaX(30);
-  prawa.rotacjaX(30);
   rysujD(api); 
   api.redraw();
 }

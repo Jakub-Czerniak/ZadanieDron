@@ -8,8 +8,8 @@ using namespace std;
 template<class TYP,int ROZMIAR>
 Macierz<TYP, ROZMIAR>::Macierz()
 {
-  for(int i;i<ROZMIAR;i++)
-    for(int k; k<ROZMIAR;k++)
+  for(int i=0;i<ROZMIAR;i++)
+    for(int k=0; k<ROZMIAR;k++)
       tab[i][k]=0;
 }
 

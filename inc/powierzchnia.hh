@@ -16,9 +16,8 @@ class powierzchnia: public Obiekt3D
 {
 private:
     double X;
-    double Z;
 public:
-    powierzchnia(Wektor3D srodek,double x,double z);
+    powierzchnia(Wektor3D srodek,double x);
     void rysuj(drawNS::Draw3DAPI & api);
 };
 

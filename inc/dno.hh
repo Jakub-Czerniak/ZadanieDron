@@ -16,9 +16,8 @@ class dno: public Obiekt3D
 {
 private:
     double X;
-    double Z;
 public:
-    dno(Wektor3D srodek,double x,double z);
+    dno(Wektor3D srodek,double x);
     void rysuj(drawNS::Draw3DAPI & api);
 };
 

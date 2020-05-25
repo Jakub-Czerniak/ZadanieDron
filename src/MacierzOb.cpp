@@ -22,7 +22,6 @@ MacierzOb::MacierzOb(Macierz3D &Mac) : Macierz3D(Mac)
 
     Macierz3D PomTrans;
     Macierz3D Pom;
-    
     PomTrans= Mac.transponuj();
     Pom=Mac*PomTrans;
     Macierz3D PomJed(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));

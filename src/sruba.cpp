@@ -14,31 +14,8 @@ sruba::sruba()
     wierzcholki[9]=Wektor3D();
     wierzcholki[10]=Wektor3D();
     wierzcholki[11]=Wektor3D();
-    pkt_zaczep=Wektor3D(0,0,0);
 }
 
-sruba::sruba(Wektor3D Zaczepienie ,Wektor3D A, Wektor3D B, Wektor3D C, Wektor3D D, Wektor3D E, Wektor3D F, Wektor3D G, Wektor3D H, Wektor3D I, Wektor3D J, Wektor3D K, Wektor3D L)
-{
-    wierzcholki[0]=A;
-    wierzcholki[1]=B;
-    wierzcholki[2]=C;
-    wierzcholki[3]=D;
-    wierzcholki[4]=E;
-    wierzcholki[5]=F;
-    wierzcholki[6]=G;
-    wierzcholki[7]=H;
-    wierzcholki[8]=I;
-    wierzcholki[9]=J;
-    wierzcholki[10]=K;
-    wierzcholki[11]=L;
-
-    pkt_zaczep=Zaczepienie;
-    Macierz<double,3> Mac(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));
-    MacierzOb MacJedn(Mac);
-    Orientacja=Mac;
-    Wektor3D Wek(0,0,0);
-    Srodek=Wek;
-}
 
 sruba::sruba(Wektor3D Zaczepienie, double R, double H)
 {
@@ -55,11 +32,9 @@ sruba::sruba(Wektor3D Zaczepienie, double R, double H)
     wierzcholki[10]=Wektor3D(Zaczepienie[0]-H,Zaczepienie[1]+R/sqrt(3),Zaczepienie[2]-2*R/sqrt(3));
     wierzcholki[11]=Wektor3D(Zaczepienie[0]-H,Zaczepienie[1]-R/sqrt(3),Zaczepienie[2]-2*R/sqrt(3));
 
-    pkt_zaczep=Zaczepienie;
     Macierz<double,3> Mac(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));
     Orientacja=Mac;
-    Wektor3D Wek(0,0,0);
-    Srodek=Wek;
+    Srodek=Wektor3D(0,0,0);
 }
 
 

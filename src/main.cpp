@@ -35,23 +35,17 @@ int main() {
 
 int kat, odleglosc;
 char wybor;
-sruba L(Wektor3D(-2,-1.1,0),0.5,1);
-sruba P(Wektor3D(-2,1.1,0),0.5,1);
-dron plywak(L, P, Wektor3D(-2,-1.5,-1),Wektor3D(-2,1.5,-1),Wektor3D(2,1.5,-1),Wektor3D(2,-1.5,-1),Wektor3D(-2,-1.5,1),Wektor3D(-2,1.5,1),Wektor3D(2,1.5,1),Wektor3D(2,-1.5,1)); 
-
-
+dron plywak(sruba(Wektor3D(-2,-1.1,0),0.5,1), sruba(Wektor3D(-2,1.1,0),0.5,1), Wektor3D(-2,-1.5,-1),Wektor3D(-2,1.5,-1),Wektor3D(2,1.5,-1),Wektor3D(2,-1.5,-1),Wektor3D(-2,-1.5,1),Wektor3D(-2,1.5,1),Wektor3D(2,1.5,1),Wektor3D(2,-1.5,1)); 
+powierzchnia Pow(Wektor3D(0,0,17),20);
+dno Dno(Wektor3D(0,0,-20),20);
 
 
 drawNS::Draw3DAPI * api = new APIGnuPlot3D(-20,20,-20,20,-20,20,0); 
 
-
-
-dno Dno(Wektor3D(0,0,0),20,-20);
-powierzchnia Pow(Wektor3D(0,0,0),20,18);
-Dno.rysuj(*api);
 Pow.rysuj(*api);
-plywak.rysujD(*api);
+Dno.rysuj(*api);
 
+plywak.rysujD(*api);
 api->redraw();
 
 menu();

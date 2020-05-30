@@ -35,10 +35,15 @@ sruba::sruba(Wektor3D Zaczepienie, double R, double H)
     Macierz<double,3> Mac(Wektor3D(1,0,0),Wektor3D(0,1,0),Wektor3D(0,0,1));
     Orientacja=Mac;
     Srodek=Wektor3D(0,0,0);
+    wysokosc=H;
 }
 
+double sruba::Get_H()
+{
+  return wysokosc;
+}
 
-void sruba::rysuj(drawNS::Draw3DAPI & api)
+void sruba::rysuj()
 {
  Wektor3D wierzcholki_Glb[12];
 
@@ -46,8 +51,8 @@ void sruba::rysuj(drawNS::Draw3DAPI & api)
 {
 wierzcholki_Glb[ind]=Srodek+Orientacja*wierzcholki[ind];
 }
-api.erase_shape(ID);
-ID= api.draw_polyhedron(vector<vector<Point3D> > {{
+api->erase_shape(ID);
+ID= api->draw_polyhedron(vector<vector<Point3D> > {{
 	Point3D(wierzcholki_Glb[0][0],wierzcholki_Glb[0][1],wierzcholki_Glb[0][2]), Point3D(wierzcholki_Glb[1][0],wierzcholki_Glb[1][1],wierzcholki_Glb[1][2]), Point3D(wierzcholki_Glb[2][0],wierzcholki_Glb[2][1],wierzcholki_Glb[2][2]),Point3D(wierzcholki_Glb[3][0],wierzcholki_Glb[3][1],wierzcholki_Glb[3][2]),Point3D(wierzcholki_Glb[4][0],wierzcholki_Glb[4][1],wierzcholki_Glb[4][2]), Point3D(wierzcholki_Glb[5][0],wierzcholki_Glb[5][1],wierzcholki_Glb[5][2])
       },{
 	Point3D(wierzcholki_Glb[6][0],wierzcholki_Glb[6][1],wierzcholki_Glb[6][2]), Point3D(wierzcholki_Glb[7][0],wierzcholki_Glb[7][1],wierzcholki_Glb[7][2]), Point3D(wierzcholki_Glb[8][0],wierzcholki_Glb[8][1],wierzcholki_Glb[8][2]), Point3D(wierzcholki_Glb[9][0],wierzcholki_Glb[9][1],wierzcholki_Glb[9][2]), Point3D(wierzcholki_Glb[10][0],wierzcholki_Glb[10][1],wierzcholki_Glb[10][2]),Point3D(wierzcholki_Glb[11][0],wierzcholki_Glb[11][1],wierzcholki_Glb[11][2])

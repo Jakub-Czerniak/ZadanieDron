@@ -5,6 +5,8 @@
 #include "Wektor.hh"
 #include "Dr3D_gnuplot_api.hh"
 #include "Draw3D_api_interface.hh"
+#include "InterfejsDrona.hh"
+#include "przeszkoda.hh"
 
 using std::vector;
 using std::cout;
@@ -12,13 +14,14 @@ using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
 using Wektor3D=Wektor<double,3>;
 
-class dno: public Obiekt3D
+class dno: public Obiekt3D, public przeszkoda
 {
 private:
     double X;
 public:
     dno(Wektor3D srodek,double x);
-    void rysuj(drawNS::Draw3DAPI & api);
+    bool Czy_Kolizja(InterfejsDrona *InDr);
+    void rysuj();
 };
 
 #endif

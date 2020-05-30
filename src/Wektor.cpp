@@ -159,8 +159,27 @@ Wektor<TYP, ROZMIAR> operator*(double l1, const Wektor<TYP, ROZMIAR> & W2)
     return wynik;
 }
 
+template<class TYP,int ROZMIAR>
+Wektor<TYP,ROZMIAR> abs(const Wektor<TYP, ROZMIAR> & W2)
+{
+  Wektor<TYP, ROZMIAR> wynik;
+    for (int index = 0 ; index<ROZMIAR ;index++)
+      {
+	wynik[index]=abs(W2[index]);
+      }
+    return wynik;
+}
+template<class TYP,int ROZMIAR>
+TYP dlugosc(const Wektor<TYP,ROZMIAR> & W2)
+{
+  double wynik;
+  wynik=sqrt(W2[0]*W2[0]+W2[1]*W2[1]+W2[2]*W2[2]);
+  return wynik;
+}
 
 
 template class Wektor<double,3>;
+template Wektor<double, 3> abs(const Wektor<double, 3> & W2);
+template double dlugosc(const Wektor<double, 3> & W2);
 template std::ostream& operator << (std::ostream &Strm, const Wektor<double, 3> &Wek);
 template std::istream& operator >> (std::istream &Strm, Wektor<double, 3> &Wek);

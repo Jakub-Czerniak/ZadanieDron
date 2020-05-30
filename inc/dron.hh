@@ -3,27 +3,40 @@
 
 #include <math.h>
 #include "Obiekt3D.hh"
+#include "InterfejsDrona.hh"
 #include "Wektor.hh"
 #include "Macierz.hh"
 #include "MacierzOb.hh"
 #include "prostopadloscian.hh"
 #include "graniastoslup.hh"
+#include "dno.hh"
 #include "sruba.hh"
+#include "powierzchnia.hh"
 #include "Dr3D_gnuplot_api.hh"
 #include "Draw3D_api_interface.hh"
+#include "przeszkoda.hh"
+using std::vector;
+using std::shared_ptr;
 using Wektor3D=Wektor<double,3>;
 
-class dron: public prostopadloscian
+class dron: public InterfejsDrona, public prostopadloscian, public przeszkoda
 {
+protected:
     sruba lewa;
     sruba prawa;
+    double promien;
 public:
-dron(sruba L, sruba P, Wektor3D A, Wektor3D B, Wektor3D C, Wektor3D D, Wektor3D E, Wektor3D F, Wektor3D G, Wektor3D H);
+dron(sruba L, sruba P, double X, double Y, double Z);
 
-dron plyn(double odl, double kat);
-dron plyn_anim(double odl,double kat, drawNS::Draw3DAPI & api);
-void obrot_anim(double kat, drawNS::Draw3DAPI &api);
-void rysujD(drawNS::Draw3DAPI &api);
+double Get_R();
+Wektor3D Get_C();
+void plyn(double odl, double kat);
+void plyn_anim(double odl,double kat, przeszkoda *LPrzeszkod[6]);
+void obrot_anim(double kat);
+void rysuj();
+void Set_api(drawNS::Draw3DAPI *Api);
+bool Czy_Kolizja(InterfejsDrona *InDr);
+bool Czy_Kolizja(przeszkoda *LPrzeszkod[6]);
 };
 
 

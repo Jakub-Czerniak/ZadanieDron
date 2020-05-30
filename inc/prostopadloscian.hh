@@ -8,6 +8,7 @@
 #include "MacierzOb.hh"
 #include "Dr3D_gnuplot_api.hh"
 #include "Draw3D_api_interface.hh"
+#include "InterfejsDrona.hh"
 
 using std::vector;
 using std::cout;
@@ -21,12 +22,12 @@ protected:
     Wektor3D wierzcholki[8];
 public:
     prostopadloscian();
-    prostopadloscian(Wektor3D A, Wektor3D B, Wektor3D C, Wektor3D D, Wektor3D E, Wektor3D F, Wektor3D G, Wektor3D H);
+    prostopadloscian(double X, double Y, double Z);
     void przesun(Wektor3D &Wek);
     void rotacjaZ(const double kat);
     void rotacjaY(const double kat);
     void rotacjaX(const double kat);
-    void rysuj(drawNS::Draw3DAPI & api);
+    void rysuj();
     
 };
 

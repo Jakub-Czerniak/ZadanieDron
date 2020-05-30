@@ -19,10 +19,12 @@ using Wektor3D=Wektor<double,3>;
 
 class sruba: public graniastoslup
 {
+    double wysokosc;
 public:
 sruba();
 sruba(Wektor3D Zaczepienie, double R, double H);
-void rysuj(drawNS::Draw3DAPI & api);
+double Get_H();
+void rysuj();
 };
 
 

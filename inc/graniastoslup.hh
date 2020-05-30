@@ -23,7 +23,7 @@ public:
     void przesun(Wektor3D &Wek);
     void rotacjaZ(const double kat);
     void rotacjaX(const double kat);
-    void rysuj(drawNS::Draw3DAPI & api);
+    void rysuj();
 };
 
 

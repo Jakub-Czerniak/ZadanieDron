@@ -43,6 +43,10 @@ public:
 template<class TYP,int ROZMIAR>
 Wektor<TYP, ROZMIAR> operator*(double l1, const Wektor<TYP, ROZMIAR> & W2);
 template<class TYP,int ROZMIAR>
+Wektor<TYP, ROZMIAR> abs(const Wektor<TYP, ROZMIAR> & W2);
+template<class TYP,int ROZMIAR>
+TYP dlugosc(const Wektor<TYP,ROZMIAR> & W2);
+template<class TYP,int ROZMIAR>
 std::istream& operator >> (std::istream &strm, Wektor<TYP, ROZMIAR> &Wek);
 template<class TYP,int ROZMIAR>
 std::ostream& operator << (std::ostream &strm, const Wektor<TYP, ROZMIAR> &Wek);

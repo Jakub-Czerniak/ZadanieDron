@@ -18,9 +18,16 @@ bool PrstPrzeszkoda::Czy_Kolizja(InterfejsDrona *InDr)
 Wektor3D OdlOdSrod=abs(Orientacja*wierzcholki[1]);
   double R=InDr->Get_R();
   Wektor3D C=InDr->Get_C();
-   
-  if(Srodek[2]+R+OdlOdSrod[2]<=C[2] || Srodek[1]+R+OdlOdSrod[1]<=C[1] || Srodek[0]+R+OdlOdSrod[0]<=C[0] )
-    return false;
-    std::cout<<"Prst Kolizja"<< std::endl;
-  return true;
+
+bool OsZ= (Srodek[2]+R+OdlOdSrod[2]>C[2] && Srodek[2]-R-OdlOdSrod[2]<C[2]);
+bool OsY= (Srodek[1]+R+OdlOdSrod[1]>C[1] && Srodek[1]-R-OdlOdSrod[1]<C[1]);
+bool OsX= (Srodek[0]+R+OdlOdSrod[0]>C[0] && Srodek[0]-R-OdlOdSrod[0]<C[0]);
+
+  if(OsY && OsZ && OsX)
+  {
+    std::cout<<"Prst kolizja" <<std::endl;
+    return true;
+  }
+
+  return false;
 }

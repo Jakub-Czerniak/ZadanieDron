@@ -48,7 +48,7 @@ prawa.przesun(ruch);
 przesun(ruch);
 }
 
-void dron::plyn_anim(double odl,double kat, przeszkoda *LPrzeszkod[6])
+void dron::plyn_anim(double odl,double kat, przeszkoda *LPrzeszkod[7])
 {
   bool skoncz=false;
       for(int i=0;i<odl*10 && skoncz!=true ;i++)
@@ -114,18 +114,21 @@ bool dron::Czy_Kolizja(InterfejsDrona *InDr)
 
   if(dlugosc(Srodek-Srodek2)<=promien+promien2)
   {
-    return true;
     std::cout<<"Dron Kolizja"<< std::endl;
+    return true;
   }
   return false;
 }
 
-bool dron::Czy_Kolizja(przeszkoda *LPrzeszkod[6])
+bool dron::Czy_Kolizja(przeszkoda *LPrzeszkod[7])
 {
-for(int i=0;i<3;i++)
+for(int i=0;i<7;i++)
 {
 if(LPrzeszkod[i]->Czy_Kolizja(this)==true)
+{
+  
 return true;
+}
 }
 return false;
 }

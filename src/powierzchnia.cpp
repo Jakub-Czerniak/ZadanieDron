@@ -8,11 +8,12 @@
 
    bool powierzchnia::Czy_Kolizja(InterfejsDrona *InDr)
    {
-     double R=InDr->Get_R();
      Wektor3D C=InDr->Get_C();
      
      if(Srodek[2]>=C[2])
+     {
       return false;
+     }
       std::cout<<"Woda Kolizja"<< std::endl;
      return true;
    }

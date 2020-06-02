@@ -10,6 +10,7 @@
 
   template<class TYP, int ROZMIAR>
 class Wektor {
+protected:
 
   TYP tab[ROZMIAR];
   

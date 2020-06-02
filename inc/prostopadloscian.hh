@@ -3,7 +3,7 @@
 
 
 #include "Obiekt3D.hh"
-#include "Wektor.hh"
+#include "Wektor3D.hh"
 #include "Macierz.hh"
 #include "MacierzOb.hh"
 #include "Dr3D_gnuplot_api.hh"
@@ -14,7 +14,7 @@ using std::vector;
 using std::cout;
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
-using Wektor3D=Wektor<double,3>;
+
 
 class prostopadloscian : public Obiekt3D
 {

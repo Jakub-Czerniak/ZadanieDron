@@ -12,7 +12,9 @@
      Wektor3D C=InDr->Get_C();
      
      if(Srodek[2]+R<=C[2])
+     {
       return false;
+     }
       std::cout<<"Dno Kolizja"<< std::endl;
      return true;
    }

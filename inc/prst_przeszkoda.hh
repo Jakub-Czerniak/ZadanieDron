@@ -4,8 +4,7 @@
 #include "prostopadloscian.hh"
 #include "przeszkoda.hh"
 #include "InterfejsDrona.hh"
-#include "Wektor.hh"
-using Wektor3D=Wektor<double,3>;
+#include "Wektor3D.hh"
 
 
 class PrstPrzeszkoda: public prostopadloscian, public przeszkoda

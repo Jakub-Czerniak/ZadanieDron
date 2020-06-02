@@ -5,7 +5,6 @@
 #include "Obiekt3D.hh"
 #include "MacierzOb.hh"
 #include "Macierz.hh"
-#include "Wektor.hh"
 #include "prostopadloscian.hh"
 #include "graniastoslup.hh"
 #include "dron.hh"
@@ -13,6 +12,7 @@
 #include "powierzchnia.hh"
 #include "dno.hh"
 #include "prst_przeszkoda.hh"
+#include "Wektor3D.hh"
 
 using drawNS::Point3D;
 using drawNS::APIGnuPlot3D;
@@ -21,7 +21,7 @@ using std::cin;
 using std::vector;
 using std::shared_ptr;
 using std::endl;
-using Wektor3D=Wektor<double,3>;
+
 
 
 
@@ -35,9 +35,11 @@ cout << "m - wyswietl menu" << endl << endl;
 cout << "k - koniec dzialania programu" << endl << endl;
 }
 
+int Wektor3D::AktualnaIl;
+int Wektor3D::LacznaIl;
 
 int main() {
-przeszkoda *LPrzeszkod[7];
+vector<przeszkoda*> LPrzeszkod;
 dron *LDronow[2];
 int kat, odleglosc;
 int dronid=0;
@@ -52,8 +54,8 @@ PrstPrzeszkoda Prst2(3,3,7,Wektor3D(13,-15,-17));
 PrstPrzeszkoda Prst3(2,32,8,Wektor3D(-15,0,-16));
 drawNS::Draw3DAPI * api = new APIGnuPlot3D(-20,20,-20,20,-20,20,0); 
 
-plywak1.plyn(10,45);
-cout<< plywak1.Get_C();
+plywak0.plyn(10,45);
+cout<< plywak0.Get_C();
 Prst0.Set_api(api);
 Prst1.Set_api(api);
 Prst2.Set_api(api);
@@ -71,13 +73,13 @@ Dno.rysuj();
 plywak0.rysuj();
 plywak1.rysuj();
 
-LPrzeszkod[0]=&Prst0;
-LPrzeszkod[1]=&Prst1;
-LPrzeszkod[2]=&Prst2;
-LPrzeszkod[3]=&Prst3;
-LPrzeszkod[4]=&Pow;
-LPrzeszkod[5]=&Dno;
-LPrzeszkod[6]=&plywak1;
+LPrzeszkod.push_back(&Prst0);
+LPrzeszkod.push_back(&Prst1);
+LPrzeszkod.push_back(&Prst2);
+LPrzeszkod.push_back(&Prst3);
+LPrzeszkod.push_back(&Pow);
+LPrzeszkod.push_back(&Dno);
+LPrzeszkod.push_back(&plywak1);
 LDronow[0]=&plywak0;
 LDronow[1]=&plywak1;
 
@@ -108,6 +110,8 @@ while(wybor!='k')
   cout<<"Podaj dodatnią odleglosc."<<endl<<endl;
   else
   LDronow[dronid]->plyn_anim(odleglosc, kat,  LPrzeszkod);
+  cout<< "Aktualna ilosc obiektow Wektor3D:" << Wektor3D::IleAktu() << endl;
+  cout << "Laczna ilosc obiektow Wektor3D:" << Wektor3D::IleLaczn() <<endl << endl;
   }
   
   break;
@@ -116,8 +120,10 @@ while(wybor!='k')
   cout << "Podaj wartosc kata obrotu w stopniach." << endl; 
   cout << "Wartosc kata> ";
   cin >> kat;
-  cout << kat << endl << endl;
+  cout << endl;
   LDronow[dronid]->obrot_anim(kat);
+  cout<< "Aktualna ilosc obiektow Wektor3D:" << Wektor3D::IleAktu() << endl;
+  cout << "Laczna ilosc obiektow Wektor3D:" << Wektor3D::IleLaczn() <<endl << endl;
   break;
 
   case 'm':

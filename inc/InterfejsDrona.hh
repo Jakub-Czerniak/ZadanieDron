@@ -3,8 +3,7 @@
 
 #include "Dr3D_gnuplot_api.hh"
 #include "Draw3D_api_interface.hh"
-#include "Wektor.hh"
-using Wektor3D=Wektor<double,3>;
+#include "Wektor3D.hh"
 
 class InterfejsDrona
 {

@@ -1,0 +1,10 @@
+<map id="drawNS::APIGnuPlot3D::~APIGnuPlot3D" name="drawNS::APIGnuPlot3D::~APIGnuPlot3D">
+<area shape="rect" id="node2" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#a258e809fc5faa7884ef0e339a4bcf608" title="draws line between 2 points " alt="" coords="216,5,379,47"/>
+<area shape="rect" id="node3" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#a57e1102221d08157dab5037bdb20cbcc" title="draws polygonal_chain between n points " alt="" coords="216,71,379,112"/>
+<area shape="rect" id="node4" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#ac5237f08f9923f785928fec32805e31c" title="draws polyhedron described by its apexs " alt="" coords="216,136,379,177"/>
+<area shape="rect" id="node5" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#afc9b4e6c71a0377d881ece405a64a0e4" title="draws surface described by its points " alt="" coords="427,165,589,207"/>
+<area shape="rect" id="node6" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#a837c1e656cdd7f3c1d64f373552b1766" title="erase shape by id " alt="" coords="216,253,379,295"/>
+<area shape="rect" id="node7" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#ac33b91c7e171909c6ae2fcfbf7b915b1" title="change color of shape " alt="" coords="216,319,379,360"/>
+<area shape="rect" id="node8" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#aa7da7ed9eaaea392a5710143fda0da67" title="change mode for ploting and/or time between auto&#45;replots " alt="" coords="216,384,379,425"/>
+<area shape="rect" id="node9" href="$classdraw_n_s_1_1_a_p_i_gnu_plot3_d.html#a27a110521a511f0c75e5c867f247a3f6" title="replot all shapes Replots all shapes, works only in negative refresh_rate_ms value mode..." alt="" coords="216,449,379,491"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="sruba::rysuj" name="sruba::rysuj">
+<area shape="rect" id="node2" href="$classdraw_n_s_1_1_draw3_d_a_p_i.html#ab90eae31dff8403261611ab5f3217357" title="erase shape by id " alt="" coords="144,5,299,47"/>
+<area shape="rect" id="node3" href="$classdraw_n_s_1_1_draw3_d_a_p_i.html#a5e528a44b66c29469a30f54c59223f11" title="draws polyhedron described by its apexs " alt="" coords="144,71,299,112"/>
+</map>

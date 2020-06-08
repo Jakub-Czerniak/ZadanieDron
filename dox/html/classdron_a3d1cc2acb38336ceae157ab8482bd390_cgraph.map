@@ -1,0 +1,9 @@
+<map id="dron::obrot_anim" name="dron::obrot_anim">
+<area shape="rect" id="node2" href="$_wektor_8hh.html#a60a975c87928b68aea25ca110c1b17ae" title="abs" alt="" coords="238,5,281,32"/>
+<area shape="rect" id="node3" href="$classgraniastoslup.html#a6661ce0226bdc7f5e30b0e22cb313062" title="graniastoslup::rotacjaZ" alt="" coords="182,56,337,83"/>
+<area shape="rect" id="node4" href="$classprostopadloscian.html#af53c2c4b9b5798f55170eb5d4d090191" title="prostopadloscian::rotacjaZ" alt="" coords="172,107,347,133"/>
+<area shape="rect" id="node5" href="$classdron.html#aa5b1b076ecd71e90e67d17dc2eba6d75" title="dron::rysuj" alt="" coords="218,157,301,184"/>
+<area shape="rect" id="node6" href="$classprostopadloscian.html#a99d65bb8fa8f8ab33b8e551302bed38e" title="prostopadloscian::rysuj" alt="" coords="395,157,551,184"/>
+<area shape="rect" id="node7" href="$classdraw_n_s_1_1_draw3_d_a_p_i.html#ab90eae31dff8403261611ab5f3217357" title="erase shape by id " alt="" coords="599,117,753,158"/>
+<area shape="rect" id="node8" href="$classdraw_n_s_1_1_draw3_d_a_p_i.html#a5e528a44b66c29469a30f54c59223f11" title="draws polyhedron described by its apexs " alt="" coords="599,182,753,223"/>
+</map>

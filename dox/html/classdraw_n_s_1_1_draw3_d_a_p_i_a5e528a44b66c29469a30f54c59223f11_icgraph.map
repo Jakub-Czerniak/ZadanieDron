@@ -1,0 +1,9 @@
+<map id="drawNS::Draw3DAPI::draw_polyhedron" name="drawNS::Draw3DAPI::draw_polyhedron">
+<area shape="rect" id="node2" href="$classgraniastoslup.html#a5f6d59dcf8ae217c0d4b8d45cdd7cb8b" title="graniastoslup::rysuj" alt="" coords="219,68,353,95"/>
+<area shape="rect" id="node3" href="$classprostopadloscian.html#a99d65bb8fa8f8ab33b8e551302bed38e" title="prostopadloscian::rysuj" alt="" coords="208,119,364,145"/>
+<area shape="rect" id="node8" href="$classsruba.html#ab64f274a5277473a42ceeedc18c40c2e" title="sruba::rysuj" alt="" coords="241,169,331,196"/>
+<area shape="rect" id="node4" href="$classdron.html#aa5b1b076ecd71e90e67d17dc2eba6d75" title="dron::rysuj" alt="" coords="412,81,495,108"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="709,81,760,108"/>
+<area shape="rect" id="node5" href="$classdron.html#ab9c2ec79de73360a96b1052b331b4cb9" title="dron::plyn_anim" alt="" coords="545,5,659,32"/>
+<area shape="rect" id="node7" href="$classdron.html#a3d1cc2acb38336ceae157ab8482bd390" title="dron::obrot_anim" alt="" coords="543,107,661,133"/>
+</map>

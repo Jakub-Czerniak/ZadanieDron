@@ -1,0 +1,7 @@
+<map id="dron::Czy_Kolizja" name="dron::Czy_Kolizja">
+<area shape="rect" id="node2" href="$class_interfejs_drona.html#a43391a10fa309b8fa7bde1fbc59181bb" title="InterfejsDrona::Get_C" alt="" coords="179,5,329,32"/>
+<area shape="rect" id="node3" href="$class_interfejs_drona.html#a6dd33cecf76281639f1a59aaeaf54d65" title="InterfejsDrona::Get_R" alt="" coords="179,56,329,83"/>
+<area shape="rect" id="node4" href="$_wektor_8hh.html#ac3e5c6e1d9c1df20e94c30f0d78c38c2" title="dlugosc" alt="" coords="221,107,287,133"/>
+<area shape="rect" id="node5" href="$_wektor_8cpp.html#a7b5884c0650af62a0df407f61fd0c37e" title="abs" alt="" coords="399,81,441,108"/>
+<area shape="rect" id="node6" href="$_wektor_8cpp.html#a739337910beaf2d0066478c5caab5604" title="operator\&gt;\&gt;" alt="" coords="377,132,463,159"/>
+</map>

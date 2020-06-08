@@ -1,0 +1,14 @@
+<map id="dron" name="dron">
+<area shape="rect" id="node2" href="$class_interfejs_drona.html" title="InterfejsDrona" alt="" coords="152,412,256,439"/>
+<area shape="rect" id="node3" href="$classprostopadloscian.html" title="prostopadloscian" alt="" coords="427,336,547,363"/>
+<area shape="rect" id="node4" href="$class_obiekt3_d.html" title="Obiekt3D" alt="" coords="253,260,331,287"/>
+<area shape="rect" id="node13" href="$classgraniastoslup.html" title="graniastoslup" alt="" coords="259,336,357,363"/>
+<area shape="rect" id="node5" href="$classdraw_n_s_1_1_draw3_d_a_p_i.html" title="Abstract interface for drawing class Abstract class used as interface for 3D drawing class implementa..." alt="" coords="5,171,152,197"/>
+<area shape="rect" id="node6" href="$class_macierz_ob.html" title="MacierzOb" alt="" coords="176,171,261,197"/>
+<area shape="rect" id="node7" href="$class_macierz.html" title="Macierz\&lt; double, 3 \&gt;" alt="" coords="143,95,289,121"/>
+<area shape="rect" id="node8" href="$class_wektor.html" title="Wektor\&lt; double, ROZMIAR \&gt;" alt="" coords="118,5,314,32"/>
+<area shape="rect" id="node9" href="$class_wektor3_d.html" title="Wektor3D" alt="" coords="342,171,423,197"/>
+<area shape="rect" id="node10" href="$class_wektor.html" title="Wektor\&lt; double, 3 \&gt;" alt="" coords="313,95,455,121"/>
+<area shape="rect" id="node11" href="$classprzeszkoda.html" title="przeszkoda" alt="" coords="359,412,449,439"/>
+<area shape="rect" id="node12" href="$classsruba.html" title="sruba" alt="" coords="281,412,335,439"/>
+</map>
